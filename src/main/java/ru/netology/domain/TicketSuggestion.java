@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TicketSuggestion implements Comparable<TicketSuggestion>{
+public class TicketSuggestion implements Comparable<TicketSuggestion> {
     private int id;
     private int cost;
     private String from;

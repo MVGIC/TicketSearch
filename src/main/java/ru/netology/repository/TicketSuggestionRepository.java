@@ -4,7 +4,7 @@ import ru.netology.domain.TicketSuggestion;
 
 public class TicketSuggestionRepository {
 
-private TicketSuggestion[] suggestions = new TicketSuggestion[0];
+    private TicketSuggestion[] suggestions = new TicketSuggestion[0];
 
 
     public void save(TicketSuggestion suggestion) {

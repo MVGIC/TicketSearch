@@ -3,8 +3,6 @@ package ru.netology.manager;
 import ru.netology.domain.TicketSuggestion;
 import ru.netology.repository.TicketSuggestionRepository;
 
-import static java.util.regex.Pattern.matches;
-
 public class TicketSuggestionManager {
     private TicketSuggestionRepository repository;
 
@@ -21,7 +19,7 @@ public class TicketSuggestionManager {
         repository.removeById(id);
     }
 
-    public TicketSuggestion[] getAll() {
+    public TicketSuggestion[] getAll(String from, String to) {
         TicketSuggestion[] suggestions = repository.findAll();
         TicketSuggestion[] result = new TicketSuggestion[suggestions.length];
         for (int i = 0; i < result.length; i++) {
