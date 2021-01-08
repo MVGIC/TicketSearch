@@ -19,13 +19,38 @@ public class TicketSuggestionManager {
         repository.removeById(id);
     }
 
+//    public TicketSuggestion[] getAll(String from, String to) {
+//        TicketSuggestion[] suggestions = repository.findAll();
+//        TicketSuggestion[] result = new TicketSuggestion[suggestions.length];
+//        for (int i = 0; i < result.length; i++) {
+//            int index = suggestions.length - i - 1;
+//            result[i] = suggestions[index];
+//        }
+//        return result;
+//    }
+
     public TicketSuggestion[] getAll(String from, String to) {
-        TicketSuggestion[] suggestions = repository.findAll();
-        TicketSuggestion[] result = new TicketSuggestion[suggestions.length];
-        for (int i = 0; i < result.length; i++) {
-            int index = suggestions.length - i - 1;
-            result[i] = suggestions[index];
+        TicketSuggestion[] result = new TicketSuggestion[0];
+        for (TicketSuggestion suggestion : repository.findAll()) {
+            if (matches(suggestion, from, to)) {
+                TicketSuggestion[] tmp = new TicketSuggestion[result.length + 1];
+                System.arraycopy(result, 0, tmp, 0, result.length);
+                tmp[tmp.length - 1] = suggestion;
+                result = tmp;
+            }
         }
         return result;
+    }
+
+    public boolean matches(TicketSuggestion suggestion, String from, String to) {
+
+        if (suggestion.getFrom().equalsIgnoreCase(from)) {
+            return true;
+        }
+        if (suggestion.getTo().equalsIgnoreCase(to)) {
+            return true;
+        }
+
+        return false;
     }
 }
