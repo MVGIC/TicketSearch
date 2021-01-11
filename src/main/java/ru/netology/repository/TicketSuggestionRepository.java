@@ -6,7 +6,6 @@ public class TicketSuggestionRepository {
 
     private TicketSuggestion[] suggestions = new TicketSuggestion[0];
 
-
     public void save(TicketSuggestion suggestion) {
         int length = suggestions.length + 1;
         TicketSuggestion[] tmp = new TicketSuggestion[length];
