@@ -3,6 +3,8 @@ package ru.netology.manager;
 import ru.netology.domain.TicketSuggestion;
 import ru.netology.repository.TicketSuggestionRepository;
 
+import java.util.Arrays;
+
 public class TicketSuggestionManager {
     private TicketSuggestionRepository repository;
 
@@ -12,7 +14,6 @@ public class TicketSuggestionManager {
 
     public void add(TicketSuggestion suggestion) {
         repository.save(suggestion);
-
     }
 
     public void removeById(int id) {
@@ -27,6 +28,7 @@ public class TicketSuggestionManager {
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = suggestion;
                 result = tmp;
+                Arrays.sort(result);
             }
         }
         return result;
@@ -40,7 +42,6 @@ public class TicketSuggestionManager {
         if (suggestion.getTo().equalsIgnoreCase(to)) {
             return true;
         }
-
         return false;
     }
 }
