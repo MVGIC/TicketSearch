@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.TicketSuggestion;
 import ru.netology.repository.TicketSuggestionRepository;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class TicketSuggestionManagerTest {
@@ -56,10 +54,8 @@ class TicketSuggestionManagerTest {
 
         manager.getAll("KJA", "LED");
 
-        TicketSuggestion[] actual = new TicketSuggestion[]{first, sixth};
+        TicketSuggestion[] actual = manager.getAll("KJA", "LED");
         TicketSuggestion[] expected = new TicketSuggestion[]{sixth, first};
-
-        Arrays.sort(actual);
 
         assertArrayEquals(expected, actual);
     }
@@ -84,10 +80,8 @@ class TicketSuggestionManagerTest {
 
         manager.getAll("SVO", "PKC");
 
-        TicketSuggestion[] actual = new TicketSuggestion[]{third, fourth, seventh};
+        TicketSuggestion[] actual = manager.getAll("SVO", "PKC");
         TicketSuggestion[] expected = new TicketSuggestion[]{third, fourth, seventh};
-
-        Arrays.sort(actual);
 
         assertArrayEquals(expected, actual);
     }
@@ -112,7 +106,7 @@ class TicketSuggestionManagerTest {
 
         manager.getAll("VKO", "VKO");
 
-        TicketSuggestion[] actual = new TicketSuggestion[0];
+        TicketSuggestion[] actual = manager.getAll("VKO", "VKO");
         TicketSuggestion[] expected = new TicketSuggestion[0];
 
         assertArrayEquals(expected, actual);
@@ -138,10 +132,8 @@ class TicketSuggestionManagerTest {
 
         manager.getAll("LED", "LED");
 
-        TicketSuggestion[] actual = new TicketSuggestion[]{first, second, fifth, sixth};
+        TicketSuggestion[] actual = manager.getAll("LED", "LED");
         TicketSuggestion[] expected = new TicketSuggestion[]{fifth, sixth, first, second};
-
-        Arrays.sort(actual);
 
         assertArrayEquals(expected, actual);
     }

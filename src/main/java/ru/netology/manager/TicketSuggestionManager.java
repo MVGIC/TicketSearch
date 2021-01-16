@@ -28,9 +28,9 @@ public class TicketSuggestionManager {
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = suggestion;
                 result = tmp;
-                Arrays.sort(result);
             }
         }
+        Arrays.sort(result);
         return result;
     }
 
