@@ -26,8 +26,6 @@ class TicketSuggestionManagerTest {
         manager.add(sixth);
         manager.add(seventh);
 
-        manager.getAll("GDX", "SVO");
-
         TicketSuggestion[] actual = manager.getAll("GDX", "SVO");
         TicketSuggestion[] expected = new TicketSuggestion[]{seventh};
 
@@ -51,8 +49,6 @@ class TicketSuggestionManagerTest {
         manager.add(fifth);
         manager.add(sixth);
         manager.add(seventh);
-
-        manager.getAll("KJA", "LED");
 
         TicketSuggestion[] actual = manager.getAll("KJA", "LED");
         TicketSuggestion[] expected = new TicketSuggestion[]{sixth, first};
@@ -78,8 +74,6 @@ class TicketSuggestionManagerTest {
         manager.add(sixth);
         manager.add(seventh);
 
-        manager.getAll("SVO", "PKC");
-
         TicketSuggestion[] actual = manager.getAll("SVO", "PKC");
         TicketSuggestion[] expected = new TicketSuggestion[]{third, fourth, seventh};
 
@@ -104,8 +98,6 @@ class TicketSuggestionManagerTest {
         manager.add(sixth);
         manager.add(seventh);
 
-        manager.getAll("VKO", "VKO");
-
         TicketSuggestion[] actual = manager.getAll("VKO", "VKO");
         TicketSuggestion[] expected = new TicketSuggestion[0];
 
@@ -129,8 +121,6 @@ class TicketSuggestionManagerTest {
         manager.add(fifth);
         manager.add(sixth);
         manager.add(seventh);
-
-        manager.getAll("LED", "LED");
 
         TicketSuggestion[] actual = manager.getAll("LED", "LED");
         TicketSuggestion[] expected = new TicketSuggestion[]{fifth, sixth, first, second};
